@@ -1,4 +1,4 @@
-# HTML and CSS Fundamentals for User Interface Design 2.0
+# HTML and CSS Fundamentals for User Interface Design 3
 
 ## Course description
 
@@ -44,3 +44,5 @@ experiences across various online platforms.
 
 - [Lesson 11](module-06/lesson-11/README.md)
 - [Lesson 12](module-06/lesson-12/README.md)
+
+[🍫 Design Simply Chocolate](https://www.figma.com/design/SHNrA7r9RBXLqDUVYZjL1g/Simply-Chocolate?node-id=609-1205&t=yuHrnGFbTTQo06K3-1)
