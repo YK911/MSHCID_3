@@ -15,15 +15,25 @@
       href="./images/icons/logo.svg"
       type="image/svg+xml"
     />
+    <!-- Critical CSS -->
+    <style>
+      /* header {
+        background-color: darkmagenta;
+        color: white;
+      } */
+    </style>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <!-- Header section -->
-    <header id="home">
-      <nav>
-        <a href="index.html">
+    <header class="header" id="home">
+      <nav class="header-nav">
+        <a class="logo" href="index.html">
           Simply Chocolate
-
           <img
+            class="logo-icon"
             src="./images/icons/logo.svg"
             alt="Site logo: chocolate"
             width="24"
@@ -31,28 +41,30 @@
           />
         </a>
 
-        <ul>
-          <li>
-            <a href="#home">Home</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#home">Home</a>
           </li>
-          <li>
-            <a href="#made">How it’s made?</a>
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#made">How it’s made?</a>
           </li>
-          <li>
-            <a href="#reviews">Chocolate is loved</a>
+          <li class="nav-list-item">
+            <a class="nav-list-link" href="#reviews">Chocolate is loved</a>
           </li>
         </ul>
       </nav>
 
-      <ul>
-        <li>
+      <ul class="socials socials-dark">
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to facebook.com"
           >
             <img
+              class="socials-icon"
               src="./images/icons/icon-facebook.svg"
               alt="Icon facebook"
               width="24"
@@ -60,14 +72,16 @@
             />
           </a>
         </li>
-        <li>
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to instagram.com"
           >
             <img
+              class="socials-icon"
               src="./images/icons/icon-instagram.svg"
               alt="Icon instagram"
               width="24"
@@ -75,14 +89,16 @@
             />
           </a>
         </li>
-        <li>
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to twitter.com"
           >
             <img
+              class="socials-icon"
               src="./images/icons/icon-twitter.svg"
               alt="Icon twitter"
               width="24"
@@ -95,14 +111,16 @@
 
     <main>
       <!-- Hero section -->
-      <section>
-        <h1>
+      <section class="hero">
+        <h1 class="hero-title">
           Treat yourself or a loved one to our finest ingredients for a moment
           of pure delight!
         </h1>
 
-        <button type="button">Buy now</button>
-        <button type="button">How it’s made</button>
+        <button class="btn btn-accent" type="button" id="action-btn">
+          Buy now
+        </button>
+        <button class="btn btn-light" type="button">How it’s made</button>
         <a href="#">
           scroll down
           <img
@@ -420,7 +438,7 @@
             </p>
           </li>
         </ul>
-        <button type="button">Leave a review</button>
+        <button class="btn btn-dark" type="button">Leave a review</button>
       </section>
     </main>
 
@@ -491,13 +509,13 @@
 
       <ul>
         <li>
-          <a href="#home">Home</a>
+          <a class="footer-link" href="#home">Home</a>
         </li>
         <li>
-          <a href="#made">How it’s made?</a>
+          <a class="footer-link" href="#made">How it’s made?</a>
         </li>
         <li>
-          <a href="#reviews">Chocolate is loved</a>
+          <a class="footer-link" href="#reviews">Chocolate is loved</a>
         </li>
       </ul>
     </footer>

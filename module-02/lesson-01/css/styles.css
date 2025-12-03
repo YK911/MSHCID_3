@@ -1,0 +1,100 @@
+/* #region Variables */
+:root {
+  /* Colors */
+  --accent-cl: 253, 146, 34;
+  --text-cl: 255 255 255;
+
+  /* Sizes */
+  --size-s: 10px;
+
+  /* Shadows */
+  --shadow: 0 0 10px 10px rgb(var(--accent-cl) / 25%);
+}
+/* #endregion */
+
+/* #region Base styles */
+body {
+  color: red;
+}
+button {
+  cursor: pointer;
+}
+/* #endregion */
+
+/* #region Reset styles */
+
+/* #endregion */
+
+/* #region Common styles */
+.btn {
+  color: rgb(var(--text-cl) / 30%);
+  background-color: transparent;
+}
+.btn-accent {
+  background-color: #fd9222;
+}
+.btn-accent:hover,
+.btn-accent:focus {
+  color: #fd9222;
+  background-color: #fcf1e0;
+}
+
+.btn-light {
+}
+.btn-light:hover,
+.btn-light:focus {
+  color: #fd9222;
+}
+.btn-dark {
+  color: #111111;
+}
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: #fd9222;
+  color: #fff;
+}
+/* #endregion */
+
+/* #region Logo */
+.logo {
+}
+.logo-icon {
+}
+/* #endregion */
+
+/* #region Socials */
+.socials {
+}
+.socials-dark {
+}
+.socials-item {
+}
+.socials-link {
+}
+.socials-icon {
+}
+/* #endregion */
+
+/* #region Header */
+.header {
+}
+.header-nav {
+}
+
+.nav-list {
+}
+.nav-list-item {
+}
+.nav-list-link {
+}
+/* #endregion */
+
+/* #region Hero */
+.hero {
+  background-color: rgba(17, 17, 17, 0.4);
+  color: rgb(var(--text-cl) / 30%);
+}
+.hero-title {
+}
+
+/* #endregion */
