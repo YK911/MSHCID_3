@@ -37,6 +37,12 @@
 /* #endregion */
 
 /* #region Base styles */
+/*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
 body {
   font-family: var(--primary-font);
   font-size: 14px;
@@ -48,6 +54,15 @@ body {
 /* #endregion */
 
 /* #region Reset styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
 a {
   color: currentColor;
   text-decoration: none;
@@ -55,6 +70,8 @@ a {
 ul,
 ol {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 address {
   font-style: normal;
@@ -78,6 +95,14 @@ button {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   overflow: hidden;
+}
+.container {
+  max-width: 1168px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
 }
 .section-title {
   font-size: 24px;
@@ -195,8 +220,12 @@ button {
   background: var(--cl-bg-surface-dark);
 }
 .benefits-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 .benefits-item {
+  width: 300px;
 }
 .benefits-caption {
   font-size: 18px;
@@ -222,7 +251,9 @@ button {
   background-color: var(--cl-bg-dark);
   color: var(--cl-text-secondary);
 }
-.ingredients-ill {
+.ingredients-item:nth-child(2n) {
+  border: 1px solid #fd9222;
+  border-radius: 15px;
 }
 .ingredients-caption {
   font-weight: 600;
