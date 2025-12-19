@@ -35,10 +35,37 @@
   --cl-btn-light-text: rgb(var(--color-white));
   --cl-btn-dark-text: rgb(var(--color-dark));
 
+  --cl-border-light: rgb(var(--color-white) / 50%);
+
   /* Card set properties */
   --indent-x: 32px;
   --indent-y: 32px;
   --items: 4;
+
+  /* Z index */
+  --header: 1;
+  --modal: 2;
+  --backdrop: 3;
+
+  /* Transitions */
+  --trns-fast: 300ms ease-in;
+  --trns-slow: 800ms ease-out;
+}
+/* #endregion */
+
+/* #region Animations */
+@keyframes fade-in-rotate {
+  0% {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: skewX(37deg) skewY(346deg) translate(80px, -100px);
+  }
 }
 /* #endregion */
 
@@ -143,6 +170,9 @@ img {
   border: 1px solid transparent;
   border-radius: 100px;
   background-color: transparent;
+
+  transition: var(--trns-fast);
+  transition-property: color, background-color, border-color;
 }
 .btn-accent {
   background-color: var(--cl-btn-accent-bg);
@@ -203,13 +233,17 @@ img {
 
 /* #region Socials */
 .socials {
+  --cl-icon-hover: var(--color-accent);
+
   display: flex;
   gap: 14px;
   align-items: center;
 }
 .socials-dark {
+  --cl-icon: var(--color-black);
 }
 .socials-light {
+  --cl-icon: var(--color-white);
 }
 .socials-item {
   width: 40px;
@@ -223,19 +257,33 @@ img {
   width: 100%;
   height: 100%;
 
-  border: 1px solid transparent;
+  border: 1px solid rgb(var(--cl-icon) / 10%);
   border-radius: 10px;
+
+  transition: var(--trns-fast);
+  transition-property: border-color;
 }
 .socials-link:hover,
 .socials-link:focus {
-  border-color: var(--cl-bg-accent--10);
+  border-color: rgb(var(--cl-icon-hover) / 10%);
 }
 .socials-icon {
+  fill: rgb(var(--cl-icon));
+
+  transition: var(--trns-fast);
+  transition-property: fill;
+}
+.socials-link:hover .socials-icon {
+  fill: rgb(var(--cl-icon-hover));
 }
 /* #endregion */
 
 /* #region Header */
 .header {
+  position: sticky;
+  top: -1px;
+  background-color: #fff;
+  z-index: var(--header);
 }
 .header > .container {
   display: flex;
@@ -256,9 +304,20 @@ img {
 .menu-item {
 }
 .menu-link {
+  position: relative;
   display: block;
   font-weight: 500;
   line-height: 1.14;
+
+  /* transition-property: color; */
+  /* transition-duration: 1300ms; */
+  /* transition-timing-function: ease-in-out; */
+  /* transition-delay: 500ms; */
+
+  /* transition: color 300ms ease-in, box-shadow 300ms ease-in; */
+
+  transition: var(--trns-fast);
+  transition-property: color, box-shadow;
 }
 .menu-link.active,
 .menu-link:hover,
@@ -270,6 +329,9 @@ img {
 }
 .menu-link.active::after {
   content: '';
+  position: absolute;
+  left: 0;
+  bottom: 20px;
   display: block;
   width: 100%;
   height: 4px;
@@ -297,7 +359,6 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* background-attachment: fixed; */
 }
 .hero-title {
   max-width: 484px;
@@ -307,6 +368,12 @@ img {
   line-height: 1.21;
   letter-spacing: -0.03em;
   color: var(--cl-text-secondary);
+
+  /* animation: fade-in-rotate 1200ms ease-in 400ms both;
+  animation-play-state: running; */
+}
+.hero-title:hover {
+  animation-play-state: paused;
 }
 .hero-wrapper {
   display: flex;
@@ -323,6 +390,9 @@ img {
   line-height: 1.28;
   letter-spacing: -0.03em;
   color: var(--cl-text-secondary);
+
+  transition: var(--trns-fast);
+  transition-property: color;
 }
 .hero-link:hover,
 .hero-link:focus {
@@ -337,6 +407,16 @@ img {
   border-radius: 50%;
   background-color: currentColor;
 }
+.hero-link-icon {
+  fill: var(--cl-bg-accent);
+
+  transition: var(--trns-fast);
+  transition-property: fill;
+}
+.hero-link:hover .hero-link-icon,
+.hero-link:focus .hero-link-icon {
+  fill: var(--cl-bg-light);
+}
 /* #endregion */
 
 /* #region Benefits */
@@ -350,14 +430,31 @@ img {
   gap: 88px;
 }
 .benefits-item {
+  position: relative;
   width: 308px;
 }
 .benefits-item:not(:last-child)::after {
   content: '';
+  position: absolute;
+  top: 25%;
+  right: -45px;
   display: block;
   width: 1px;
-  height: 124px;
+  height: 50%;
   background-color: rgba(255, 255, 255, 0.5);
+}
+.benefits-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 22px;
+  width: 62px;
+  height: 62px;
+  border: 1px solid var(--cl-border-light);
+  border-radius: 50%;
+}
+.benfits-icon {
 }
 .benefits-caption {
   margin-bottom: 18px;
@@ -378,6 +475,7 @@ img {
 .ingredients-list {
 }
 .ingredients-item {
+  position: relative;
   padding: 32px 23px;
   border-radius: 15px;
 }
@@ -392,11 +490,24 @@ img {
 .ingredients-item:nth-child(2n) {
   border: 1px solid #fd9222;
 }
+.ingredients-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  fill: none;
+}
+.ingredients-item:nth-child(2n) .ingredients-icon {
+  stroke: var(--cl-bg-accent);
+}
+.ingredients-item:nth-child(2n + 1) .ingredients-icon {
+  stroke: var(--cl-bg-light);
+}
 .ingredients-ill {
   margin-bottom: 36px;
 }
 .ingredients-caption {
   font-weight: 600;
+  font-size: 14px;
   line-height: 1.28;
   text-transform: uppercase;
 }
@@ -508,6 +619,43 @@ img {
   --indent-x: var(--indent-y);
 }
 .bestsellers-item {
+  cursor: pointer;
+}
+.bestsellers-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  transform: translateY(100%);
+
+  transition: transform var(--trns-slow);
+
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(
+    165deg,
+    rgba(253, 253, 255, 0.1) 3.97%,
+    rgba(8, 2, 21, 0) 109.76%
+  );
+  backdrop-filter: blur(7.5px);
+
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  color: var(--color-base-off-white, #fafafa);
+}
+.bestsellers-item:hover .overlay {
+  transform: translateY(0);
+}
+.bestsellers-ill {
   border-radius: 15px 15px 0 0;
   overflow: hidden;
 }
@@ -605,6 +753,9 @@ img {
 }
 .contacts-link {
   color: var(--cl-text-secondary);
+
+  transition: var(--trns-fast);
+  transition-property: color;
 }
 .contacts-link:hover,
 .contacts-link:focus {
@@ -618,5 +769,18 @@ img {
 }
 .footer-menu .menu-link {
   padding: 18px 0;
+}
+/* #endregion */
+
+/* #region Scroll to top */
+.scroll-to-top {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+}
+.scroll-to-top-icon {
+  fill: none;
+  stroke: var(--cl-bg-accent);
+  transform: rotate(-90deg);
 }
 /* #endregion */
