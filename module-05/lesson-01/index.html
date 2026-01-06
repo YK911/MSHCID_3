@@ -637,14 +637,133 @@
               <a class="menu-link" href="#">Chocolate is loved</a>
             </li>
           </ul>
+
+          <form name="subscribeForm">
+            <input type="text" />
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-open">
+      <div class="modal">
+        <button class="modal-btn" type="button" aria-label="Close mdal button">
+          <svg class="" width="28" height="28">
+            <use href="./images/icons.svg#close"></use>
+          </svg>
+        </button>
+
+        <p class="modal-caption">
+          LEAVE A REVIEW ABOUT <span class="accent-text">OUR CHOCOLATE</span>
+        </p>
+
+        <form class="modal-form" name="reviewForm">
+          <div class="modal-form-wrapper">
+            <label for="user-name">Name</label>
+            <div class="modal-form-control">
+              <input
+                class="modal-form-field"
+                type="text"
+                name="user-name"
+                id="user-name"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#user"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-form-wrapper">
+            <label for="user-email">Email</label>
+            <div class="modal-form-control">
+              <input
+                class="modal-form-field"
+                type="email"
+                name="user-email"
+                id="user-email"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#email"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-form-wrapper">
+            <label for="user-phone">Phone number</label>
+            <div class="modal-form-control">
+              <input
+                class="modal-form-field"
+                type="tel"
+                name="user-phone"
+                id="user-phone"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-form-wrapper">
+            <label for="user-comment">Comment</label>
+            <textarea
+              name="user-comment"
+              id="user-comment"
+              placeholder="Enter text"
+            ></textarea>
+          </div>
+
+          <div class="modal-form-wrapper">
+            <input
+              type="checkbox"
+              name="user-agreement"
+              id="user-agreement"
+              value="true"
+              checked
+            />
+
+            <label class="modal-form-agreement" for="user-agreement">
+              <span class="modal-form-agreement-checkbox">
+                <svg class="modal-form-agreement-icon" width="10" height="10">
+                  <use href="./images/icons.svg#check-mark"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a class="modal-form-agreement-link" href="">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button class="btn btn-accent" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
 
     <a class="scroll-to-top" href="#home">
       <svg class="scroll-to-top-icon" width="48" height="48">
         <use href="./images/icons.svg#arrow"></use>
       </svg>
     </a>
+
+    <script>
+      // console.log(document.forms);
+      // console.log(document.forms['review-form']);
+      // console.log(document.forms.reviewForm);
+
+      // document.forms.reviewForm.addEventListener('submit', event => {
+      //   event.preventDefault();
+      //   const formData = Object.fromEntries(new FormData(event.target));
+
+      //   console.log('🚀 ~ formData:', formData);
+
+      //   event.target.reset();
+      // });
+
+      // const volumeControl = document.querySelector('[name="volumeSetting"]');
+
+      // volumeControl.oninput = event => {
+      //   const value = event.currentTarget.value;
+      //   outputVolume.textContent = value;
+      // };
+    </script>
   </body>
 </html>

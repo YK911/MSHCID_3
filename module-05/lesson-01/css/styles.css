@@ -87,6 +87,10 @@ body {
   /* Pattern image */
   /* background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); */
 }
+/* Blocking scroll */
+body:has(.backdrop.is-open) {
+  overflow-y: hidden;
+}
 /* #endregion */
 
 /* #region Reset styles */
@@ -782,5 +786,62 @@ img {
   fill: none;
   stroke: var(--cl-bg-accent);
   transform: rotate(-90deg);
+}
+/* #endregion */
+
+/* #region Modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--backdrop);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+
+  transition: opacity 150ms ease-in, visibility 150ms ease-in;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 517px;
+  min-height: 794px;
+  padding: 40px;
+  border-radius: 15px;
+  background: #fafafa;
+}
+.modal-btn {
+}
+.modal-caption {
+}
+.modal-form {
+}
+.modal-form-wrapper {
+}
+.modal-form-control {
+}
+.modal-form-field {
+}
+.modal-form-icon {
+}
+.modal-form-agreement {
+}
+.modal-form-agreement-checkbox {
+}
+.modal-form-agreement-icon {
+}
+.modal-form-agreement-link {
 }
 /* #endregion */
