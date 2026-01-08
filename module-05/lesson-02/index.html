@@ -649,7 +649,7 @@
     <div class="backdrop is-open">
       <div class="modal">
         <button class="modal-btn" type="button" aria-label="Close mdal button">
-          <svg class="" width="28" height="28">
+          <svg class="modal-btn-icon" width="28" height="28">
             <use href="./images/icons.svg#close"></use>
           </svg>
         </button>
@@ -660,37 +660,55 @@
 
         <form class="modal-form" name="reviewForm">
           <div class="modal-form-wrapper">
-            <label for="user-name">Name</label>
+            <label class="modal-form-label" for="user-name">Name</label>
             <div class="modal-form-control">
               <input
                 class="modal-form-field"
                 type="text"
                 name="user-name"
                 id="user-name"
+                minlength="2"
+                maxlength="20"
+                required
+                pattern="^[a-zA-Z]+\s[a-zA-Z]*"
+                title="Name must contains two words separated by space"
+                placeholder="John Dou"
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#user"></use>
               </svg>
+              <svg class="error" width="24" height="24">
+                <use href="./images/icons.svg#error"></use>
+              </svg>
+              <span class="error-msg">Some error text</span>
             </div>
           </div>
 
           <div class="modal-form-wrapper">
-            <label for="user-email">Email</label>
+            <label class="modal-form-label" for="user-email">Email</label>
             <div class="modal-form-control">
               <input
                 class="modal-form-field"
                 type="email"
                 name="user-email"
                 id="user-email"
+                required
+                placeholder="example@mail.com"
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#email"></use>
+              </svg>
+
+              <svg class="error" width="24" height="24">
+                <use href="./images/icons.svg#error"></use>
               </svg>
             </div>
           </div>
 
           <div class="modal-form-wrapper">
-            <label for="user-phone">Phone number</label>
+            <label class="modal-form-label" for="user-phone"
+              >Phone number</label
+            >
             <div class="modal-form-control">
               <input
                 class="modal-form-field"
@@ -705,21 +723,27 @@
           </div>
 
           <div class="modal-form-wrapper">
-            <label for="user-comment">Comment</label>
+            <label class="modal-form-label" for="user-comment">Comment</label>
             <textarea
+              class="modal-form-comment"
               name="user-comment"
               id="user-comment"
               placeholder="Enter text"
+              required
+              minlength="10"
+              maxlength="800"
             ></textarea>
           </div>
 
           <div class="modal-form-wrapper">
             <input
+              class="checkbox visually-hidden"
               type="checkbox"
               name="user-agreement"
               id="user-agreement"
               value="true"
               checked
+              required
             />
 
             <label class="modal-form-agreement" for="user-agreement">
@@ -729,7 +753,13 @@
                 </svg>
               </span>
               I accept the terms and conditions of the
-              <a class="modal-form-agreement-link" href="">Privacy Policy</a>
+              <a
+                class="modal-form-agreement-link"
+                href=""
+                download="./assets/privacy-policy.pdf"
+              >
+                Privacy Policy
+              </a>
             </label>
           </div>
 
