@@ -1,3 +1,13 @@
+/*
+mobile  from 320 to 767 px
+tablet from 768 to 1167 px
+desktop from 1168 px
+*/
+
+.hide {
+  display: none !important;
+}
+
 /* #region Variables */
 :root {
   /* Fonts */
@@ -144,12 +154,24 @@ img {
   padding: 60px 0;
 }
 .container {
-  max-width: 1168px;
-  padding: 0 16px;
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
   margin: 0 auto;
 
-  /* outline: 2px solid red;
-  outline-offset: -2px; */
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 736px;
+    padding: 0 16px;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .container {
+    max-width: 1168px;
+  }
 }
 .section-title {
   max-width: 412px;
@@ -424,27 +446,52 @@ img {
 
 /* #region Benefits */
 .benefits {
-  padding: 50px 0px;
+  padding: 20px 0;
+
   background: var(--cl-bg-surface-dark);
+}
+@media only screen and (min-width: 768px) {
+  .benefits {
+    padding: 50px 0px;
+  }
 }
 .benefits-list {
   display: flex;
-  justify-content: center;
-  gap: 88px;
+  flex-direction: column;
+  gap: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .benefits-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 88px;
+    row-gap: 44px;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .benefits-list {
+    justify-content: center;
+  }
 }
 .benefits-item {
   position: relative;
-  width: 308px;
 }
-.benefits-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 25%;
-  right: -45px;
-  display: block;
-  width: 1px;
-  height: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+@media only screen and (min-width: 768px) {
+  .benefits-item {
+    width: 308px;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .benefits-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    right: -45px;
+    display: block;
+    width: 1px;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 }
 .benefits-wrapper {
   display: flex;
@@ -457,8 +504,7 @@ img {
   border: 1px solid var(--cl-border-light);
   border-radius: 50%;
 }
-.benfits-icon {
-}
+
 .benefits-caption {
   margin-bottom: 18px;
   font-size: 18px;
