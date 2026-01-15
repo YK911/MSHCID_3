@@ -9,7 +9,7 @@
     />
     <meta name="keywords" content="chocolate milk cacao" />
 
-    <title>Class work 07</title>
+    <title>Class work 12</title>
     <link
       rel="shortcut icon"
       href="./images/icons/logo.svg"
@@ -36,15 +36,24 @@
   </head>
   <body>
     <!-- Header section -->
-    <header class="header hide" id="home">
+    <header class="header" id="home">
       <div class="container">
         <nav class="header-nav">
           <a class="logo" href="index.html">
             <i class="logo-accent">Simply</i> Chocolate
-            <svg class="logo-icon" width="24" height="24">
+            <svg class="logo-icon" width="21" height="21">
               <use href="./images/icons.svg#logo"></use>
             </svg>
           </a>
+          <button
+            class="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu button"
+          >
+            <svg class="mobile-menu-icon" width="28" height="28">
+              <use href="./images/icons.svg#burger-menu"></use>
+            </svg>
+          </button>
           <ul class="header-menu menu">
             <li class="menu-item">
               <a class="menu-link active" href="#home">Home</a>
@@ -57,7 +66,7 @@
             </li>
           </ul>
         </nav>
-        <ul class="socials socials-dark">
+        <ul class="header-socials socials socials-dark">
           <li class="socials-item">
             <a
               class="socials-link"
@@ -103,7 +112,7 @@
 
     <main>
       <!-- Hero section -->
-      <section class="hero hide">
+      <section class="hero">
         <div class="hero-container container">
           <h1 class="hero-title">
             Treat yourself or a loved one to our&nbsp;finest ingredients for a
@@ -188,26 +197,65 @@
               <svg class="ingredients-icon" width="24" height="24">
                 <use href="./images/icons.svg#arrow"></use>
               </svg>
-              <img
-                class="ingredients-ill"
-                src="./images/ingridients/img-1.png"
-                alt="MILK CHOCOLATE"
-                width="214"
-                height="160"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1168px)"
+                  srcset="
+                    ./images/ingridients/img-1_desk.png    1x,
+                    ./images/ingridients/img-1_desk@2x.png 2x
+                  "
+                />
+                <source
+                  media="(max-width: 1167px)"
+                  srcset="
+                    ./images/ingridients/img-1_tab.png    1x,
+                    ./images/ingridients/img-1_tab@2x.png 2x
+                  "
+                />
+                <!-- <source
+                  media="(max-width: 767.98px)"
+                  srcset="
+                    ./images/ingridients/img-1_mob.png    1x,
+                    ./images/ingridients/img-1_mob@2x.png 2x
+                  "
+                /> -->
+                <img
+                  class="ingredients-ill"
+                  src="./images/ingridients/img-1_tab.png"
+                  alt="MILK CHOCOLATE"
+                  width="214"
+                  height="160"
+                />
+              </picture>
               <p class="ingredients-caption">MILK CHOCOLATE</p>
             </li>
             <li class="ingredients-item card-set-item">
               <svg class="ingredients-icon" width="24" height="24">
                 <use href="./images/icons.svg#arrow"></use>
               </svg>
-              <img
-                class="ingredients-ill"
-                src="./images/ingridients/img-2.png"
-                alt="MILK CHOCOLATE"
-                width="214"
-                height="160"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1168px)"
+                  srcset="
+                    ./images/ingridients/img-2_desk.png    1x,
+                    ./images/ingridients/img-2_desk@2x.png 2x
+                  "
+                />
+                <source
+                  media="(max-width: 1167px)"
+                  srcset="
+                    ./images/ingridients/img-2_tab.png    1x,
+                    ./images/ingridients/img-2_tab@2x.png 2x
+                  "
+                />
+                <img
+                  class="ingredients-ill"
+                  src="./images/ingridients/img-2_tab.png"
+                  alt="MILK CHOCOLATE"
+                  width="214"
+                  height="160"
+                />
+              </picture>
               <p class="ingredients-caption">MILK</p>
             </li>
             <li class="ingredients-item card-set-item">
@@ -325,7 +373,7 @@
         </div>
       </section>
       <!-- Product section -->
-      <section class="products section hide">
+      <section class="products section">
         <div class="container">
           <h2 class="section-title">
             Our <span class="accent-text">products</span>
@@ -334,10 +382,15 @@
             <li class="products-item card-set-item">
               <img
                 class="products-pic"
+                srcset="
+                  ./images/products/img-1.jpg    1x,
+                  ./images/products/img-1@2x.jpg 2x
+                "
                 src="./images/products/img-1.jpg"
                 alt="Orange"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-title">Orange</h3>
               <p class="products-type">Dark chocolate</p>
@@ -346,10 +399,15 @@
             <li class="products-item card-set-item">
               <img
                 class="products-pic"
+                srcset="
+                  ./images/products/img-2.jpg    1x,
+                  ./images/products/img-2@2x.jpg 2x
+                "
                 src="./images/products/img-2.jpg"
                 alt="Apple&Cranberry"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-title">Apple&Cranberry</h3>
               <p class="products-type">Milk chocolate</p>
@@ -358,10 +416,15 @@
             <li class="products-item card-set-item">
               <img
                 class="products-pic"
+                srcset="
+                  ./images/products/img-3.jpg    1x,
+                  ./images/products/img-3@2x.jpg 2x
+                "
                 src="./images/products/img-3.jpg"
                 alt="Lime&Sea salt"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-title">Lime&Sea salt</h3>
               <p class="products-type">Dark chocolate</p>
@@ -370,10 +433,15 @@
             <li class="products-item card-set-item">
               <img
                 class="products-pic"
+                srcset="
+                  ./images/products/img-4.jpg    1x,
+                  ./images/products/img-4@2x.jpg 2x
+                "
                 src="./images/products/img-4.jpg"
                 alt="Pineapple"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-title">Pineapple</h3>
               <p class="products-type">Dark chocolate</p>
@@ -382,10 +450,15 @@
             <li class="products-item card-set-item">
               <img
                 class="products-pic"
+                srcset="
+                  ./images/products/img-5.jpg    1x,
+                  ./images/products/img-5@2x.jpg 2x
+                "
                 src="./images/products/img-5.jpg"
                 alt="Classic"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-title">Classic</h3>
               <p class="products-type">Milk chocolate</p>
@@ -394,10 +467,15 @@
             <li class="products-item card-set-item">
               <img
                 class="products-pic"
+                srcset="
+                  ./images/products/img-6.jpg    1x,
+                  ./images/products/img-6@2x.jpg 2x
+                "
                 src="./images/products/img-6.jpg"
                 alt="Honey"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-title">Honey</h3>
               <p class="products-type">Milk chocolate</p>
@@ -406,10 +484,15 @@
             <li class="products-item card-set-item">
               <img
                 class="products-pic"
+                srcset="
+                  ./images/products/img-7.jpg    1x,
+                  ./images/products/img-7@2x.jpg 2x
+                "
                 src="./images/products/img-7.jpg"
                 alt="Roasted fruits"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-title">Roasted fruits</h3>
               <p class="products-type">Dark chocolate</p>
@@ -418,10 +501,15 @@
             <li class="products-item card-set-item">
               <img
                 class="products-pic"
+                srcset="
+                  ./images/products/img-8.jpg    1x,
+                  ./images/products/img-8@2x.jpg 2x
+                "
                 src="./images/products/img-8.jpg"
                 alt="Classic"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-title">Classic</h3>
               <p class="products-type">White chocolate</p>
@@ -766,6 +854,101 @@
           <button class="btn btn-accent" type="submit">Send</button>
         </form>
       </div>
+    </div>
+
+    <div class="mobile-menu">
+      <button
+        class="mobile-menu-btn"
+        type="button"
+        aria-label="Close menu button"
+      >
+        <svg class="mobile-menu-btn-icon" width="8" height="8">
+          <use href="./images/icons.svg#close"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu-list">
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link current" href="#">Studio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="#">Portfolio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="#">Contacts</a>
+        </li>
+      </ul>
+
+      <ul class="mobile-menu-contacts">
+        <li class="mobile-menu-contacts-item">
+          <a
+            class="mobile-menu-contacts-link accent-text"
+            href="tel:+110001111111"
+          >
+            +11 (000) 111-11-11
+          </a>
+        </li>
+        <li class="mobile-menu-contacts-item">
+          <a class="mobile-menu-contacts-link" href="mailto:info@devstudio.com">
+            info@devstudio.com
+          </a>
+        </li>
+      </ul>
+
+      <ul class="mobile-menu-socials socials socials-dark">
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to facebook.com"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to instagram.com"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to twitter.com"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to facebook.com"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
 
     <a class="scroll-to-top hide" href="#home">
